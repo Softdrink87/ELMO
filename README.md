@@ -1,12 +1,9 @@
 # BERT_training
 
-
+![BERT_PROTO](./
 
 # requirements
+`<git clone https://github.com/google-research/bert>`
+`<git clone https://github.com/google/sentencepiece>`
 
-git clone https://github.com/google-research/bert and 
-git clone https://github.com/google/sentencepiece
 
-
-I think you should use an
-`<addr>` element here instead.
