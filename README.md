@@ -1,6 +1,6 @@
-# BERT_training
+# ELMO
 
-![BERT_PROTO](./
+![ELMO](./
 
 # requirements
 `<git clone https://github.com/google-research/bert>`
