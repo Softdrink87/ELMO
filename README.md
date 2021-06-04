@@ -13,5 +13,6 @@ pip install -r requirements.txt
 # 참조
 https://huggingface.co/transformers/model_doc/bert.html -> Bert with pytorch 
 
+https://github.com/soutsios/pos-tagger-bert -> POS tagging
 
-
+https://jiho-ml.com/weekly-nlp-28/
