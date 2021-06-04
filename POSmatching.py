@@ -14,7 +14,7 @@ import numpy as np
 import time,random,functools
 
 
-SEED = 2223
+SEED = int(input())
 
 random.seed(SEED)
 np.random.seed(SEED)
