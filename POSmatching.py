@@ -58,11 +58,30 @@ UD_TAGS = data.Field(unk_token=None,
                     init_token='<pad>'
                     ,preprocessing=tag_preprocessor)
 
+
+def UD_TAGS_to_KOR:
+    for i in range(length(UD_TAGS)):
+        UD_TAGS[i] == "NOUN" ? "명사" : "NOUN"
+        UD_TAGS[i] == "VERB" ? "동사" : "VERB"
+        UD_TAGS[i] == "PRON" ? "발음" : "PRON"
+        UD_TAGS[i] == "PUNCT" ? "부호" : "PUNCT"
+        UD_TAGS[i] == "ADP" ? "" : ""
+        #UD_TAGS[i] == "DET" ? "" : ""
+        UD_TAGS[i] == "ADJ" ? "형용사" : "ADJ"
+        UD_TAGS[i] == "ADV" ? "부사" : "ADV"
+        UD_TAGS[i] == "CCONJ" ? "조정 접속사" : "CCONJ"
+        #UD_TAGS[i] == "" ? "" : ""
+        #UD_TAGS[i] == "" ? "" : ""
+        #UD_TAGS[i] == "" ? "" : ""
+        #UD_TAGS[i] == "" ? "" : ""
+        #UD_TAGS[i] == "" ? "" : ""
+
 fields = (("TEXT",TEXT),("FIELD",UD_TAGS))
 
 train_data, valid_data, test_data = datasets.UDPOS.splits(fields)
 
 print(vars(train_data.examples[0]))
+
 
 
 #BATCH_SIZE = 32
