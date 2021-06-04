@@ -5,8 +5,8 @@ from transformers import BertForNextSentencePrediction, BertToknizer
 class NSP:
 
     BATCH_SIZE = 16
-    model = BertForNextSentencePrediction.from_pretrained('bert-base-trained')
-    toknizer = BertToknizer.from_pretrained('bert-base-trained')
+    model = BertForNextSentencePrediction.from_pretrained('bert-base-cased')
+    toknizer = BertToknizer.from_pretrained('bert-base-cased')
 
     def __init__(self,sentence):
         this.sentence = sentense
