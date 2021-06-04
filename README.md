@@ -16,3 +16,5 @@ https://huggingface.co/transformers/model_doc/bert.html -> Bert with pytorch
 https://github.com/soutsios/pos-tagger-bert -> POS tagging
 
 https://jiho-ml.com/weekly-nlp-28/
+
+https://colab.research.google.com/github/bentrevett/pytorch-pos-tagging/blob/master/2%20-%20Fine-tuning%20Pretrained%20Transformers%20for%20PoS%20Tagging.ipynb#scrollTo=TumdN5LnXU-0
