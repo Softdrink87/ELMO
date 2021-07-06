@@ -8,7 +8,8 @@
 
 # 준비
 
-pip install -r requirements.txt
+모듈 설치 pip install -r requirements.txt
+일렉트론 설치 npm install electron --save-dev 
 
 # 참조
 https://huggingface.co/transformers/model_doc/bert.html -> Bert with pytorch 
