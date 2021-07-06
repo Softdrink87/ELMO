@@ -1,3 +1,4 @@
 transformers == latest
 wget == latest
 torch == latest
+flask == latest
