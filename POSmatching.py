@@ -8,7 +8,7 @@ from torchtext.legacy import data
 from torchtext.legacy import datasets
 
 from transformers import BertTokenizer, BertModel
-
+ㅣ
 import numpy as np
 
 import time,random,functools
@@ -59,28 +59,43 @@ UD_TAGS = data.Field(unk_token=None,
                     ,preprocessing=tag_preprocessor)
 
 
-def UD_TAGS_to_KOR:
+def UD_TAGS_to_KOR():
     for i in range(length(UD_TAGS)):
-        UD_TAGS[i] == "NOUN" ? "명사" : "NOUN"
-        UD_TAGS[i] == "VERB" ? "동사" : "VERB"
-        UD_TAGS[i] == "PRON" ? "발음" : "PRON"
-        UD_TAGS[i] == "PUNCT" ? "부호" : "PUNCT"
-        UD_TAGS[i] == "ADP" ? "" : ""
-        #UD_TAGS[i] == "DET" ? "" : ""
-        UD_TAGS[i] == "ADJ" ? "형용사" : "ADJ"
-        UD_TAGS[i] == "ADV" ? "부사" : "ADV"
-        UD_TAGS[i] == "CCONJ" ? "조정 접속사" : "CCONJ"
-        #UD_TAGS[i] == "" ? "" : ""
-        #UD_TAGS[i] == "" ? "" : ""
-        #UD_TAGS[i] == "" ? "" : ""
-        #UD_TAGS[i] == "" ? "" : ""
-        #UD_TAGS[i] == "" ? "" : ""
+        UD_TAGS[i] = "명사" if UD_TAGS[i] == "NOUN" else ""
+        UD_TAGS[i] = "동사" if UD_TAGS[i] == "VERB" else ""
+        UD_TAGS[i] = "발음" if UD_TAGS[i] == "PRON" else ""
+        UD_TAGS[i] = "부호" if UD_TAGS[i] == "PUNCT" else ""
+        UD_TAGS[i] = "형용사" if UD_TAGS[i] == "ADJ" else ""
+        UD_TAGS[i] = "부사" if UD_TAGS[i] == "ADV" else ""
+        UD_TAGS[i] = "조정 접속사" if UD_TAGS[i] == "CCONJ" else ""
+
+
+
+
+#        UD_TAGS[i] == "VERB" if "동사" else "VERB"
+#        UD_TAGS[i] == "PRON" if "발음" else "P0RON"
+#        UD_TAGS[i] == "PUNCT"if "부호" else "PUNCT"
+#        UD_TAGS[i] == "ADP"  if ""    else ""
+#        #UD_TAGS[i] == "DET" ? "" : ""
+#        UD_TAGS[i] == "ADJ"  if "형용사"else "ADJ"
+#        UD_TAGS[i] == "ADV"  if "부사"  else "ADV"
+#        UD_TAGS[i] == "CCONJ" ? "조정 접속사" : "CCONJ"
+#        UD_TAGS[i] == "" ? "" : ""
+#        UD_TAGS[i] == "" ? "" : ""
+#        UD_TAGS[i] == "" ? "" : "" 
+#        UD_TAGS[i] == "" ? "" : ""
+#        UD_TAGS[i] == "" ? "" : ""
 
 fields = (("TEXT",TEXT),("FIELD",UD_TAGS))
 
 train_data, valid_data, test_data = datasets.UDPOS.splits(fields)
 
 print(vars(train_data.examples[0]))
+
+if __name__ == "__main__":
+    cut_and_convert_to_id(tokens,toknizer,max_input_length)
+    cut_to_max_length(tokens,max_input_length)
+    UD_TAGS_to_KOR()
 
 
 
