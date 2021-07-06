@@ -9,6 +9,7 @@
 # 준비
 
 모듈 설치 pip install -r requirements.txt
+
 일렉트론 설치 npm install electron --save-dev 
 
 # 참조
