@@ -1,0 +1,16 @@
+{
+  "name": "elmoelectron",
+  "version": "1.0.0",
+  "description": ".",
+  "main": "main.js",
+  "dependencies": {
+    "electron": "^13.1.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "electron ."
+  },
+  "author": "seongmhin noh",
+  "license": "ISC"
+}
