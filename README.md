@@ -12,6 +12,10 @@
 
 일렉트론 설치 npm install electron --save-dev 
 
+파이썬 Flask 모듈 설치 pip(3) install flask 
+
+일렉트론과 플라스크를 연동시킬 수 있는 pyshell 설치 npm install pyshell
+
 # 참조
 https://huggingface.co/transformers/model_doc/bert.html -> Bert with pytorch 
 
