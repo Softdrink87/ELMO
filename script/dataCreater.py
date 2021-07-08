@@ -1,6 +1,7 @@
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import json
+import re 
 
 def parsing(count,number):
   result = []
@@ -8,11 +9,11 @@ def parsing(count,number):
   for i in range(1,count+1):
     targetUrl = urlopen("https://ko.wikipedia.org/wiki/%ED%8A%B9%EC%88%98:%EC%9E%84%EC%9D%98%EB%AC%B8%EC%84%9C") if number == 1 else urlopen("https://en.wikipedia.org/wiki/Special:Random")
     bsObje = BeautifulSoup(targetUrl, 'html.parser')
-    target = bsObje.select('p')
+    target = bsObje.select('a')
     print(str(i) + "... loading")
     for i in range(len(target)-1):
       result.append(target[i].get_text())
-
+    
   wiki_index = [str([(i)]) for i in range(1,31)]
 
   for i in range(len(result)):
@@ -25,12 +26,17 @@ def parsing(count,number):
     if '/' in result[i]:
       result[i]=result[i].replace('/','')
       print('슬래쉬 삭제중...')
-  
+    
+
+
+
   for index in wiki_index:
       for i in range(len(result)):  
         if index in result[i]:
           result[i]=result[i].replace(wiki_index[wiki_index.index(index)],'')
           print('위키피디아 인덱스 삭제중...')
+
+  result = [c for c in result if c]
   return result
 
 def saveParser(repeat,number):
