@@ -8,9 +8,6 @@ class NSP:
     model = BertForNextSentencePrediction.from_pretrained('bert-base-cased')
     toknizer = BertToknizer.from_pretrained('bert-base-cased')
 
-    def __init__(self,sentence):
-        self.sentence = sentence
-
     def toknizing(sentence):
 
         return toknizer.encode_plus(
@@ -18,6 +15,7 @@ class NSP:
         return_attention_mask=True,
         return_tensors='pt',
         )
+
 
 
     def process(tokenized_sentence):
@@ -28,6 +26,6 @@ class NSP:
         return probs
 
 
-if __name__ == "__main__":
-    toknizing(sentence)
-    process(toknized_sentence)
+#if __name__ == "__main__":
+#    toknizing(sentence)
+#    process(toknized_sentence)
