@@ -13,11 +13,24 @@ def parsing(count,number):
     for i in range(len(target)-1):
       result.append(target[i].get_text())
 
-  for i in range(len(result)-1):
+  wiki_index = [str([(i)]) for i in range(1,31)]
+
+  for i in range(len(result)):
     if '\n' in result[i]:
       result[i]=result[i].replace('\n','')
-      print('clear')
-    
+      print('개행 문자 삭제중...')
+    if '\'' in result[i]:
+      result[i]=result[i].replace('\'','')
+      print('역슬래쉬 삭제중...')
+    if '/' in result[i]:
+      result[i]=result[i].replace('/','')
+      print('슬래쉬 삭제중...')
+  
+  for index in wiki_index:
+      for i in range(len(result)):  
+        if index in result[i]:
+          result[i]=result[i].replace(wiki_index[wiki_index.index(index)],'')
+          print('위키피디아 인덱스 삭제중...')
   return result
 
 def saveParser(repeat,number):
@@ -33,7 +46,3 @@ print('선택 :',end='\n')
 routeinput = int(input())
 repeat = int(input('반복 횟수 선택 :'))
 saveParser(repeat,routeinput)
-
-
-
-
