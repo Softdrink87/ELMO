@@ -9,7 +9,7 @@ class NSP:
     toknizer = BertToknizer.from_pretrained('bert-base-cased')
 
     def __init__(self,sentence):
-        this.sentence = sentense
+        self.sentence = sentence
 
     def toknizing(sentence):
 

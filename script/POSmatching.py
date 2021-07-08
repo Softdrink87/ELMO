@@ -1,20 +1,20 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import torch.nn.optim as optim
+#import torch.nn.optim as optim
 
 from torchtext import data
 from torchtext.legacy import data
 from torchtext.legacy import datasets
 
 from transformers import BertTokenizer, BertModel
-ㅣ
+
 import numpy as np
 
 import time,random,functools
 
 
-SEED = int(input())
+SEED = np.random.randint(1,6701)
 
 random.seed(SEED)
 np.random.seed(SEED)
@@ -59,15 +59,15 @@ UD_TAGS = data.Field(unk_token=None,
                     ,preprocessing=tag_preprocessor)
 
 
-def UD_TAGS_to_KOR():
-    for i in range(length(UD_TAGS)):
-        UD_TAGS[i] = "명사" if UD_TAGS[i] == "NOUN" else ""
-        UD_TAGS[i] = "동사" if UD_TAGS[i] == "VERB" else ""
-        UD_TAGS[i] = "발음" if UD_TAGS[i] == "PRON" else ""
-        UD_TAGS[i] = "부호" if UD_TAGS[i] == "PUNCT" else ""
-        UD_TAGS[i] = "형용사" if UD_TAGS[i] == "ADJ" else ""
-        UD_TAGS[i] = "부사" if UD_TAGS[i] == "ADV" else ""
-        UD_TAGS[i] = "조정 접속사" if UD_TAGS[i] == "CCONJ" else ""
+def UD_TAGS_to_KOR(UD_TAGS):
+    for i in range(len(UD_TAGS)):
+        UD_TAGS[i] = "명사" if UD_TAGS[i] == "NOUN"     else UD_TAGS[i]
+        UD_TAGS[i] = "동사" if UD_TAGS[i] == "VERB"     else UD_TAGS[i]
+        UD_TAGS[i] = "발음" if UD_TAGS[i] == "PRON"     else UD_TAGS[i]
+        UD_TAGS[i] = "부호" if UD_TAGS[i] == "PUNCT"    else UD_TAGS[i]
+        UD_TAGS[i] = "형용사" if UD_TAGS[i] == "ADJ"     else  UD_TAGS[i]
+        UD_TAGS[i] = "부사" if UD_TAGS[i] == "ADV"      else UD_TAGS[i]
+        UD_TAGS[i] = "조정 접속사" if UD_TAGS[i] == "CCONJ" else UD_TAGS[i]
 
 
 
@@ -86,16 +86,18 @@ def UD_TAGS_to_KOR():
 #        UD_TAGS[i] == "" ? "" : ""
 #        UD_TAGS[i] == "" ? "" : ""
 
-fields = (("TEXT",TEXT),("FIELD",UD_TAGS))
+    def result(TEXT,UD_TAGS):
+        return (("TEXT",TEXT),("FIELD",UD_TAGS))
 
+fields = (("TEXT",TEXT),("FIELD",UD_TAGS))
 train_data, valid_data, test_data = datasets.UDPOS.splits(fields)
 
 print(vars(train_data.examples[0]))
 
-if __name__ == "__main__":
-    cut_and_convert_to_id(tokens,toknizer,max_input_length)
-    cut_to_max_length(tokens,max_input_length)
-    UD_TAGS_to_KOR()
+#if __name__ == "__main__":
+    #cut_and_convert_to_id(tokens,toknizer,max_input_length)
+    #cut_to_max_length(tokens,max_input_length)
+    #UD_TAGS_to_KOR()
 
 
 
