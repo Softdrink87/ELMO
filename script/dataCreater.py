@@ -1,12 +1,13 @@
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
+from tqdm import tqdm
 import json
 import re 
 
 def parsing(count,number):
   result = []
   
-  for i in range(1,count+1):
+  for i in tqdm(range(1,count+1)):
     targetUrl = urlopen("https://ko.wikipedia.org/wiki/%ED%8A%B9%EC%88%98:%EC%9E%84%EC%9D%98%EB%AC%B8%EC%84%9C") if number == 1 else urlopen("https://en.wikipedia.org/wiki/Special:Random")
     bsObje = BeautifulSoup(targetUrl, 'html.parser')
     target = bsObje.select('p')
