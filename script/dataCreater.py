@@ -20,13 +20,13 @@ def parsing(count,number):
   for i in range(len(result)):
     if '\n' in result[i]:
       result[i]=result[i].replace('\n','')
-      print('개행 문자 삭제중...')
+      #print('개행 문자 삭제중...')
     if '\'' in result[i]:
       result[i]=result[i].replace('\'','')
-      print('역슬래쉬 삭제중...')
+      #print('역슬래쉬 삭제중...')
     if '/' in result[i]:
       result[i]=result[i].replace('/','')
-      print('슬래쉬 삭제중...')
+      #print('슬래쉬 삭제중...')
     
 
 
@@ -34,7 +34,7 @@ def parsing(count,number):
       for i in range(len(result)):  
         if index in result[i]:
           result[i]=result[i].replace(wiki_index[wiki_index.index(index)],'')
-          print('위키피디아 인덱스 삭제중...')
+          #print('위키피디아 인덱스 삭제중...')
 
   result = [c for c in result if c]
   return result
@@ -43,7 +43,6 @@ def saveParser(repeat,number):
   result = json.dumps(parsing(repeat,number),indent=4)
   with open ('data.txt','w',newline='\n') as f:
     f.write(result)
-  #print('완료')
 
 def remove_unicode():
   data = []
@@ -58,9 +57,6 @@ def remove_unicode():
   for i in data:
     res = re.sub(r"/[u]\S{4,10}","",i)
     result.append(res)
-
-  #dumps = json.dumps(result)
-  #print(dumps)
 
   with open('result.txt','w') as f:
     for i in result:
