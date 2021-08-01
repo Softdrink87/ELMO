@@ -2,3 +2,5 @@ transformers == latest
 wget == latest
 torch == latest
 flask == latest
+googletrans == 4.0.0-rc1
+
