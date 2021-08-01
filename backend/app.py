@@ -1,13 +1,13 @@
 from flask import Flask
-import ELMO
 import requests,time
 import jsonify
 import googletrans
+from predic import Predict
 
 app = Flask(__name__)
 
 #mdl = ELMO(tokens="",tokenizer="",max_input_length="",UD_TAGS="",sentence="",text="")
-mdl = predict()
+mdl = Predict()
 
 @app.route('/QA',methods=['POST'])
 def POSpredict():   
