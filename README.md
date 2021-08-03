@@ -4,7 +4,8 @@
 
 >교육 목적의 BERT 모델 기반 영어 학습 프로젝트
   
-
+# 데모
+https://streamable.com/44pws1
 
 # 준비
 
