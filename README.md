@@ -13,7 +13,7 @@ https://streamable.com/44pws1
 
 일렉트론 설치 npm install electron --save-dev 
 
-일렉트론과 플라스크를 연동시킬 수 있는 pyshell 설치 npm install pyshell
+일렉트론과 플라스크를 연동시킬 수 있는 pyshell 설치 npm install python-shell
 
 # 참조
 https://huggingface.co/transformers/model_doc/bert.html -> Bert with pytorch 
