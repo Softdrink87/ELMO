@@ -1,31 +1,24 @@
 from flask import Flask
-import requests,time
-import jsonify
-import googletrans
+from flask import request,render_template
+from flask import jsonify
 from predic import Predict
 
 app = Flask(__name__)
-
-#mdl = ELMO(tokens="",tokenizer="",max_input_length="",UD_TAGS="",sentence="",text="")
 mdl = Predict()
 
-@app.route('/QA',methods=['POST'])
-def POSpredict():   
-    received_data = requests.get_json()
-    received_theme , received_sentence = received_data['theme'], received_data['sentence']
-#   received_tokens, received_tokenizer, received_max_input_length, received_UD_TAGS = received_data['token'],received_data['tokenizer'],received_data['max_input_length'],received_data['UD_TAGS']
-    #mdl = ELMO(received_tokens,received_tokenizer,received_max_input_length,received_UD_TAGS)
-    mdl.predict(received_theme, received_sentence)
+@app.route('/test')
+def test():
+    return render_template('main.html')
 
-
-#@app.route('/NSP',methods=['POST'])
-#def NSPpredict():
-    #received_data = requests.get_json()
-    #received_sentence = received_data['sentence']
-    #mdl.sentence = received_sentence
-    #mdl.NSPprocess()
-
-
+@app.route('/QA',methods=["POST"])
+def qa() -> str:
+    #received_data = request.get_json(force=True)
+    form_x = request.form['theme']
+    form_y = request.form['sentence']
+    form_link = request.form['link']
+    received_theme, received_sentence, received_link = form_x, form_y, form_link
+    result = mdl.predict(mdl, received_theme, received_sentence, received_link)
+    return result
 
 if __name__ == '__main__':  # if it's an entry point. then run Flask :O -> if it's not a module call then run Flask :D
     app.run(host='0.0.0.0', port=5000,debug=True)
